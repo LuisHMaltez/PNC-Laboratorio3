@@ -25,8 +25,8 @@ public class Floor {
     private String buttonColor;
 
     @OneToOne
-    @JoinColumn(name = "idtones", nullable = false, foreignKey = @ForeignKey(name = "FK_idTones"))
-    private Tones tones ;
+    @JoinColumn(name = "idColors", nullable = false, foreignKey = @ForeignKey(name = "FK_idColors"))
+    private Colors colors ;
 }
 
 /*Crear un catalogo para

@@ -15,9 +15,9 @@ public class StaffAssigment {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID idStaffAssigment;
     @Column
-    private String UserID;//Cambiar por el que corresponde datos del staff
+    private String PersonId;
     @Column
-    private String Branch;//
+    private String Branch;
     @Column
     private String Department;
     @Column
@@ -25,7 +25,7 @@ public class StaffAssigment {
     @Column
     private Boolean Head; //ES O NO COORDINADOR
     @ManyToOne
-    @JoinColumn(name = "idstaffrotation", nullable = false, foreignKey = @ForeignKey(name = "FK_StaffRotation"))// rotacion del staff
+    @JoinColumn(name = "idStaffRotation", nullable = false, foreignKey = @ForeignKey(name = "FK_StaffRotation"))// rotacion del staff
     private StaffRotation staffRotation ;
 
 

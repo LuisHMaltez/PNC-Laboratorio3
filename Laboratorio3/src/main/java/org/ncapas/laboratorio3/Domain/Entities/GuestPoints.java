@@ -5,15 +5,22 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
 import java.util.UUID;
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Tones {
+public class GuestPoints {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID idTones;
+    private UUID idGuestPoints;
+
     @Column
-    private String Tones;
+    private double Point;
+
+    @Column
+    private String PointOrigin;
+    @Column
+    private Date LastSum;
 }
