@@ -5,22 +5,15 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
 import java.util.UUID;
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class GuesPoints {
+public class Colors {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID idGuesPoints;
-
+    private UUID idColors;
     @Column
-    private double Point;
-
-    @Column
-    private String PointOrigin;
-    @Column
-    private Date LastSum;
+    private String Colors;
 }

@@ -21,11 +21,11 @@ public class StaffRotation {
     private  String nameRotation;
 
     @ManyToOne
-    @JoinColumn(name = "idschedule", nullable = false, foreignKey = @ForeignKey(name = "FK_idSchedule"))//horario asignado
+    @JoinColumn(name = "idSchedule", nullable = false, foreignKey = @ForeignKey(name = "FK_idSchedule"))//horario asignado
     private Schedule schedule ;
 
     @ManyToOne
-    @JoinColumn(name = "idfloor", nullable = false, foreignKey = @ForeignKey(name = "FK_idFloor"))// piso asignado
+    @JoinColumn(name = "idFloor", nullable = false, foreignKey = @ForeignKey(name = "FK_idFloor"))// piso asignado
     private Floor floor ;
 
 }

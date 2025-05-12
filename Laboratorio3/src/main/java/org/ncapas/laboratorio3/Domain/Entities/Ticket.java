@@ -23,7 +23,7 @@ public class Ticket {
 
     @ManyToOne
     @JoinColumn(name = "id_user", nullable = false, foreignKey = @ForeignKey(name = "FK_id_User"))
-    private User user ;// cambiar a usuario utilizado
+    private Person person;
 
 
 }
