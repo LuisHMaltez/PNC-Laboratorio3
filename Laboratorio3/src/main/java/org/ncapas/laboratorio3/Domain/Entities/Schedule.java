@@ -11,16 +11,14 @@ import java.util.UUID;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class GuesPoints {
+public class Schedule {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID idGuesPoints;
-
+    private UUID idSchedule;
     @Column
-    private double Point;
-
+    private Date day;
     @Column
-    private String PointOrigin;
+    private double hour; //dividir si lo requiere
     @Column
-    private Date LastSum;
+    private boolean Status;//esta activo o no
 }
