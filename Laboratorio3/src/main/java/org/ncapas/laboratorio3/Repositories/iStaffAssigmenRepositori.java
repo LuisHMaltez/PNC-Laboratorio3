@@ -1,6 +1,11 @@
 package org.ncapas.laboratorio3.Repositories;
 
-public interface iStaffAssigmenRepositori extends iGenericRepository<StaffAssignment, Integer> {
+import org.ncapas.laboratorio3.Domain.Entities.StaffAssigment;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-    List<StaffAssignment> findByName(String name);
+import java.util.List;
+
+public interface iStaffAssigmenRepositori extends JpaRepository<StaffAssigment, Integer> {
+
+    List<StaffAssigment> findByName(String name);
 }
