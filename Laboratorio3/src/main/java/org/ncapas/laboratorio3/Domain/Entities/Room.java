@@ -9,15 +9,20 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Branch {
+public class Room {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idBranch;
+    private Integer idRoom;
 
     @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false)
-    private String location;
+    @Column
+    private String description;
+
+    @ManyToOne
+    @JoinColumn(name = "id_floor", nullable = false,
+            foreignKey = @ForeignKey(name = "FK_room_floor"))
+    private Floor floor;
 }
