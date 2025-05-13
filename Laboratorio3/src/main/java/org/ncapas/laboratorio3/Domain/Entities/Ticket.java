@@ -22,7 +22,7 @@ public class Ticket {
     private double Tally;
 
     @ManyToOne
-    @JoinColumn(name = "id_user", nullable = false, foreignKey = @ForeignKey(name = "FK_id_User"))
+    @JoinColumn(name = "idPerson", nullable = false, foreignKey = @ForeignKey(name = "FK_idPerson"))
     private Person person;
 
 

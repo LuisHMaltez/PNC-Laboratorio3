@@ -23,4 +23,8 @@ public class GuestPoints {
     private String PointOrigin;
     @Column
     private Date LastSum;
+
+    @oneToOne
+    @JoinColumn(name = "idPerson", nullable = false, foreignKey = @ForeignKey(name = "FK_Person"))// id de la persona
+    private Person person;
 }
