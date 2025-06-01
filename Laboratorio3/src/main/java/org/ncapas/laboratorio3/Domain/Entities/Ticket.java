@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.UUID;
 @Entity
@@ -12,21 +14,22 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Ticket {
+
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID idTicket;
 
-    @Column
-    private Date dateTicket;
-    @Column
-    private double Tally;
+    @ManyToOne
+    @JoinColumn(name = "guest_id", nullable = false, foreignKey = @ForeignKey(name = "FK_Guest"))
+    private Guest guest;
 
     @ManyToOne
-    @JoinColumn(name = "idPerson", nullable = false, foreignKey = @ForeignKey(name = "FK_idPerson"))
-    private Person person;
+    @JoinColumn(name = "reservation_id", nullable = false, foreignKey = @ForeignKey(name = "FK_Reservation"))
+    private Reservation reservation;
 
-    @ManyToOne
-    @JoinColumn(name = "idGuestPoints", nullable = false, foreignKey = @ForeignKey(name = "FK_idGuestPoints"))
-    private GuestPoints guestPoints;
+    @Column(nullable = false)
+    private LocalDate dateTicket;
 
+    @Column(nullable = false)
+    private BigDecimal total;
 }

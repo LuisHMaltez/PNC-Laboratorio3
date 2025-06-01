@@ -14,10 +14,11 @@ public class Colors {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID idColors;
-    @Column
+
+    @Column(nullable = false)
     private String colorName;
 
-    @Column
+    @Column(nullable = false)
     private String hexCode;
 
 

@@ -9,5 +9,10 @@ import java.util.UUID;
 
 @Repository
 public interface iGuestPointRepository extends JpaRepository<GuestPoints, UUID> {
+
+    List<GuestPoints> findByIdGuestPoints(UUID idGuestPoints);
     List<GuestPoints> findByPoint(double point);
+
+    List<GuestPoints> findByPointOrigin(String pointOrigin);
+
 }

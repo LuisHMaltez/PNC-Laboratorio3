@@ -9,9 +9,8 @@ import java.util.List;
 import java.util.UUID;
 
 public interface iTicketRepository extends JpaRepository<Ticket, Date> {
+
     List<Ticket> findByIdTicket(UUID idTicket);
-
     List<Ticket> findByDateTicket(Date dateTicket);
-
     List<Ticket> findByGuestPoints(GuestPoints guestPoints);
 }

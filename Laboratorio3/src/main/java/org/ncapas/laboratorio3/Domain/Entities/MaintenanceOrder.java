@@ -18,16 +18,17 @@ public class MaintenanceOrder {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID idMaintenanceOrder;
 
-    @Column
-    private String roomId; //Arreglar esto para que sea una referencia a la entidad Room
+    @ManyToOne
+    @JoinColumn(name = "employee_id", nullable = false, foreignKey = @ForeignKey(name = "FK_Employee"))
+    private Employee reportedBy;
 
     @ManyToOne
-    private Person reportedBy;
-
-    @ManyToOne
+    @JoinColumn(name = "room_id", nullable = false, foreignKey = @ForeignKey(name = "FK_Room"))
     private Room room;
 
     private LocalDate date;
     private LocalTime time;
+
+    @Column(length = 300, nullable = false)
     private String description;
 }

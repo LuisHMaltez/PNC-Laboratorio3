@@ -1,9 +1,7 @@
 package org.ncapas.laboratorio3.Domain.Entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,9 +18,13 @@ public class Royalty {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID idRoyalty;
 
+    @Column(nullable = false)
     private String name;
 
+    @Column(nullable = false)
     private String description;
 
+    @Column(nullable = false)
+    @Min(0)
     private Integer pointCost;
 }
