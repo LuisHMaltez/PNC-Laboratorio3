@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
-public interface iStaffRotationRepositori extends JpaRepository<StaffRotation, Integer> {
+public interface iStaffRotationRepository extends JpaRepository<StaffRotation, Integer> {
 
     List<StaffRotation> findByIdStaffRotation(UUID idStaffRotation);
     List<StaffRotation> findByNameRotation(String nameRotation);
