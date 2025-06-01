@@ -7,29 +7,20 @@ import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 
-/*pisos
-El Ala Esmeralda
-La Torre del Crepusculo
-* */
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Floor {
+
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID idFloor;
-    @Column
+
+    @Column(nullable = false)
     private String name;
-    @Column
-    private String buttonColor;
 
     @OneToOne
-    @JoinColumn(name = "idColors", nullable = false, foreignKey = @ForeignKey(name = "FK_idColors"))
-    private Colors colors ;
+    @JoinColumn(name = "colors_id", nullable = false, foreignKey = @ForeignKey(name = "FK_Colors"))
+    private Colors colors ; //Color del boton del piso
 }
-
-/*Crear un catalogo para
-* purpura espectral
-* verde esmeralda
-* */

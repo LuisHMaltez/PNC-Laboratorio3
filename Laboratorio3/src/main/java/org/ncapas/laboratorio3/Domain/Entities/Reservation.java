@@ -18,15 +18,22 @@ public class Reservation {
     private UUID idReservation;
 
     @ManyToOne
-    private Person guest; //arreglar esto para que sea una referencia a la entidad Person
+    @JoinColumn(name = "guest_id", nullable = false, foreignKey = @ForeignKey(name = "FK_Guest"))
+    private Guest guest;
 
     @ManyToOne
-    private Room room; //arreglar esto para que sea una referencia a la entidad Room
+    @JoinColumn(name = "room_id", nullable = false, foreignKey = @ForeignKey(name = "FK_Room"))
+    private Room room;
 
     @ManyToOne
-    private EventHall eventHall; //arreglar esto para que sea una referencia a la entidad EventHall
+    @JoinColumn(name = "event_hall_id", nullable = false, foreignKey = @ForeignKey(name = "FK_EventHall"))
+    private EventHall eventHall;
 
+    @Column(nullable = false)
     private LocalDate checkIn;
+
+    @Column(nullable = false)
     private LocalDate checkOut;
+
     private boolean active;
 }

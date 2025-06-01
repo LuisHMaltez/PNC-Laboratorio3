@@ -18,22 +18,26 @@ public class Schedule {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID idSchedule;
 
-    @Column
+    @Column(nullable = false)
     private Date day;
 
-    @Column
+    @Column(nullable = false)
     private double hour;
 
-    @Column
+    @Column(nullable = false)
     private boolean status;
 
-    @Column
+    @Column(nullable = false)
     private LocalTime startTime;
 
-    @Column
+    @Column(nullable = false)
     private LocalTime endTime;
 
     @Column(name = "day_of_week")
     private String dayOfWeek;
+
+    @ManyToOne
+    @JoinColumn(name = "employee_id", nullable = false, foreignKey = @ForeignKey(name = "FK_Employee"))
+    private Employee employee;
 }
 

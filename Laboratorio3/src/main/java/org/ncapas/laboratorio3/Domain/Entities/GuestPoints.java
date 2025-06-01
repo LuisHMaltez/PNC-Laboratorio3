@@ -16,15 +16,15 @@ public class GuestPoints {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID idGuestPoints;
 
-    @Column
     private double point;
 
-    @Column
-    private String PointOrigin;
+    @Column(nullable = false)
+    private String pointOrigin;
+
     @Column
     private Date LastSum;
 
     @OneToOne
-    @JoinColumn(name = "idPerson", nullable = false, foreignKey = @ForeignKey(name = "FK_Person"))// id de la persona
-    private Person person;
+    @JoinColumn(name = "guest_id", nullable = false, foreignKey = @ForeignKey(name = "FK_Guest"))
+    private Guest guest;
 }
