@@ -22,7 +22,6 @@ public class Room {
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "id_floor", nullable = false,
-            foreignKey = @ForeignKey(name = "FK_room_floor"))
+    @JoinColumn(name = "idfloor", nullable = false, foreignKey = @ForeignKey(name = "FK_room_floor"))
     private Floor floor;
 }

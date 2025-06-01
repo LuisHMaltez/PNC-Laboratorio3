@@ -8,8 +8,6 @@ import java.util.List;
 
 @Repository
 public interface iMaintenanceOrderRepository extends JpaRepository<MaintenanceOrder, Integer> {
-
-    List<MaintenanceOrder> findByRoomId(Integer roomId);
-
+    List<MaintenanceOrder> findByRoomId(String roomId);
     List<MaintenanceOrder> findByReportedById(Long personId);
 }

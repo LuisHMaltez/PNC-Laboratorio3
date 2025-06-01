@@ -1,7 +1,9 @@
 package org.ncapas.laboratorio3.Repositories;
 
 
+import org.ncapas.laboratorio3.Domain.Entities.EventHall;
 import org.ncapas.laboratorio3.Domain.Entities.Reservation;
+import org.ncapas.laboratorio3.Domain.Entities.Room;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -12,9 +14,9 @@ public interface iReservationRepository extends JpaRepository<Reservation, Integ
 
     List<Reservation> findByGuestId(Long guestId);
 
-    List<Reservation> findByRoomId(Integer roomId);
+    List<Reservation> findByRoom(Room room);
 
-    List<Reservation> findByEventHallId(Integer eventHallId);
+    List<Reservation> findByEventHall(EventHall eventHall);
 
     List<Reservation> findByActive(Boolean active);
 }

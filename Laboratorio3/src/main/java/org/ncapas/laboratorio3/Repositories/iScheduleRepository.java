@@ -1,10 +1,17 @@
 package org.ncapas.laboratorio3.Repositories;
 
-public interface iScheduleRepository extends JpaRepository<Schedule, Integer> {
+import org.ncapas.laboratorio3.Domain.Entities.Schedule;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-    List<Schedule> findByName(String name);
-    List<Schedule> findByStartTime(String startTime);
-    List<Schedule> findByEndTime(String endTime);
-    List<Schedule> findByDayOfWeek(String dayOfWeek);
-    List<Schedule> findByIsActive(Boolean isActive);
+import java.time.LocalTime;
+import java.util.List;
+import java.util.UUID;
+
+public interface iScheduleRepository extends JpaRepository<Schedule, UUID> {
+
+    List<Schedule> findByIdSchedule(UUID idSchedule);
+    List<Schedule> findByStartTime(LocalTime startTime);
+    List<Schedule> findByEndTime(LocalTime endTime);
+    List<Schedule> findByDayOfWeek(String dayOfWeek); // fixed here
+    List<Schedule> findByStatus(boolean isActive);
 }

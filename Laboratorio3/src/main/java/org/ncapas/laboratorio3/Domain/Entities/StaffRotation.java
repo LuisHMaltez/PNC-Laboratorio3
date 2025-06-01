@@ -19,6 +19,8 @@ public class StaffRotation {
 
     @Column
     private  String nameRotation;
+    @Column
+    private  String status;
 
     @ManyToOne
     @JoinColumn(name = "idSchedule", nullable = false, foreignKey = @ForeignKey(name = "FK_idSchedule"))//horario asignado

@@ -10,6 +10,9 @@ public class MaintenanceOrder {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idMaintenanceOrder;
 
+    @Column
+    private String roomId;
+
     @ManyToOne
     private Person reportedBy;
 

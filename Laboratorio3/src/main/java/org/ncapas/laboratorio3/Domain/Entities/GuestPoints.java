@@ -17,14 +17,14 @@ public class GuestPoints {
     private UUID idGuestPoints;
 
     @Column
-    private double Point;
+    private double point;
 
     @Column
     private String PointOrigin;
     @Column
     private Date LastSum;
 
-    @oneToOne
+    @OneToOne
     @JoinColumn(name = "idPerson", nullable = false, foreignKey = @ForeignKey(name = "FK_Person"))// id de la persona
     private Person person;
 }
