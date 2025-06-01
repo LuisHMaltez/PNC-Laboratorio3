@@ -26,6 +26,7 @@ public class Ticket {
     private Person person;
 
     @ManyToOne
+    @JoinColumn(name = "idGuestPoints", nullable = false, foreignKey = @ForeignKey(name = "FK_idGuestPoints"))
     private GuestPoints guestPoints;
 
 }
