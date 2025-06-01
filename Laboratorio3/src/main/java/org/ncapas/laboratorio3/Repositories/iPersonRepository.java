@@ -11,8 +11,7 @@ import java.util.List;
 public interface iPersonRepository extends JpaRepository<Person, Long> {
 
     List<Person> findByFirstName(String firstName);
-
     List<Person> findByLastName(String lastName);
-
-    Person findByEmail(String email);
+    List<Person>  findByEmail(String email);
+    List<Person>  findBypassWord(String passWord);
 }
