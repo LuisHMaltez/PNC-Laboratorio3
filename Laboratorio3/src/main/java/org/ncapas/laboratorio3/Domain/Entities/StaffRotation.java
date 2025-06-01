@@ -17,17 +17,18 @@ public class StaffRotation {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID idStaffRotation;
 
-    @Column
+    @Column(nullable = false)
     private  String nameRotation;
-    @Column
+
+    @Column(nullable = false)
     private  String status;
 
     @ManyToOne
-    @JoinColumn(name = "idSchedule", nullable = false, foreignKey = @ForeignKey(name = "FK_idSchedule"))//horario asignado
-    private Schedule schedule ;
+    @JoinColumn(name = "schedule_id", nullable = false, foreignKey = @ForeignKey(name = "FK_Schedule"))
+    private Schedule schedule;
 
     @ManyToOne
-    @JoinColumn(name = "idFloor", nullable = false, foreignKey = @ForeignKey(name = "FK_idFloor"))// piso asignado
-    private Floor floor ;
+    @JoinColumn(name = "floor_id", nullable = false, foreignKey = @ForeignKey(name = "FK_Floor"))
+    private Floor floor;
 
 }

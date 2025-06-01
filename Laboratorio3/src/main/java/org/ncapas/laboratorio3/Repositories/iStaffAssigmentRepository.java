@@ -1,12 +1,12 @@
 package org.ncapas.laboratorio3.Repositories;
 
-import org.ncapas.laboratorio3.Domain.Entities.StaffAssigment;
+import org.ncapas.laboratorio3.Domain.Entities.StaffAssignment;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 import java.util.UUID;
 
-public interface iStaffAssigmentRepository extends JpaRepository<StaffAssigment, UUID> {
+public interface iStaffAssigmentRepository extends JpaRepository<StaffAssignment, UUID> {
 
-    List<StaffAssigment> findByIdStaffAssigment(UUID idStaffAssigment);
+    List<StaffAssignment> findByIdStaffAssigment(UUID idStaffAssigment);
 }

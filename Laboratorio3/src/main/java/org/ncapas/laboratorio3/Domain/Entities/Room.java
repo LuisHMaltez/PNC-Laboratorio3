@@ -20,10 +20,10 @@ public class Room {
     @Column(nullable = false)
     private String name;
 
-    @Column
+    @Column(nullable = false, length = 300)
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "idfloor", nullable = false, foreignKey = @ForeignKey(name = "FK_room_floor"))
+    @JoinColumn(name = "floor_id", nullable = false, foreignKey = @ForeignKey(name = "FK_Floor"))
     private Floor floor;
 }

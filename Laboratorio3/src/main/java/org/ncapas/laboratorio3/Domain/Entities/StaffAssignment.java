@@ -10,18 +10,18 @@ import java.util.UUID;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class StaffAssigment {
+public class StaffAssignment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID idStaffAssigment;
+    private UUID idStaffAssignment;
 
     @ManyToOne
-    @JoinColumn(name = "idPerson", nullable = false, foreignKey = @ForeignKey(name = "FK_Person")) // persona
-    private Person person;
+    @JoinColumn(name = "employee_id", nullable = false, foreignKey = @ForeignKey(name = "FK_Employee"))
+    private Employee employee;
 
     @ManyToOne
-    @JoinColumn(name = "idBranch", nullable = false, foreignKey = @ForeignKey(name = "FK_Branch")) // sucursal
+    @JoinColumn(name = "branch_id", nullable = false, foreignKey = @ForeignKey(name = "FK_Branch"))
     private Branch branch;
 
     @Column
@@ -30,11 +30,11 @@ public class StaffAssigment {
     @Column
     private String Superior;
 
-    @Column
+    @Column(nullable = false)
     private Boolean Head; //ES O NO COORDINADOR
 
     @ManyToOne
-    @JoinColumn(name = "idStaffRotation", nullable = false, foreignKey = @ForeignKey(name = "FK_StaffRotation"))// rotacion del staff
+    @JoinColumn(name = "staff_rotation_id", nullable = false, foreignKey = @ForeignKey(name = "FK_StaffRotation"))
     private StaffRotation staffRotation ;
 
 

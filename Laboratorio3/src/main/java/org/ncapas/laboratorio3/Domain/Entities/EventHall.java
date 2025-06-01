@@ -11,13 +11,17 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 public class EventHall {
+
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID idEventHall;
-    @Column
+
+    @Column(nullable = false)
     private String name;
-    @Column
-    private int Capacity;
-    @Column
-    private String Distinctive;
+
+    @Column(nullable = false)
+    private int capacity;
+
+    @Column(nullable = false)
+    private String distinctive;
 }
