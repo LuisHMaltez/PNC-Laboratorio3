@@ -9,6 +9,8 @@ import java.util.UUID;
 
 public interface iFloorRepository extends JpaRepository<Floor, UUID> {
 
+    List<Floor> findByIdFloor(UUID idFloor);
     List<Floor> findByName(String name);
+    List<Floor> findByButtonColor(String buttonColor);
 
 }

@@ -10,9 +10,9 @@ import java.util.List;
 @Repository
 public interface iPersonRepository extends JpaRepository<Employee, Long> {
 
-    List<Employee> findByFirstName(String firstName);
+    List<Person> findByFirstName(String firstName);
+    List<Person> findByLastName(String lastName);
+    List<Person>  findByEmail(String email);
+    List<Person>  findBypassWord(String passWord);
 
-    List<Employee> findByLastName(String lastName);
-
-    Employee findByEmail(String email);
 }
